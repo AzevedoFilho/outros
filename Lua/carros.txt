@@ -1,0 +1,26 @@
+Caymands - 718caymans; --
+evoque - evoq; --
+SLSAmg - slsamg; --
+bmwx6m - x6m; --
+lamb - lamboreventon; --
+focus - focusrs; --
+bmwm2 - m2; --
+clio - cliors; --
+mustang - mgt; -- ok
+hilux - bison2; -- ok
+bmws1000rr - hakuchou; -- ok
+tmax - tmax; -- ok
+fusca - fusca; -- ok
+punto - felon; -- ok
+celta - ingot; -- ok
+kawasakiz1000 - z1000; -- ok
+aventador - aventador; -- resolver
+fbi - fbi; -- remover
+passat - passat; --
+parati - asea; -- ok
+r1 - r1; -- ok
+strada - zion; -- ok
+ftoro - ftoro; -- ok
+
+https://www.patreon.com/tntgroleplay
+
