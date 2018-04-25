@@ -1,0 +1,1 @@
+Olá amigos(a), repositório para outras linguagens, feito para outros propósitos! Abraços e "coding > all!"
