@@ -1,0 +1,49 @@
+Option 1: SSH with X11 Forwarding
+Connect to the EC2 host using SSH with X11 forwarding enabled.
+
+ssh -X 13.57.185.127
+In the resulting session you should find that the DISPLAY environment variable is set.
+
+echo $DISPLAY
+With this in place you can launch an application on the remote host and it will show up on your local desktop. Try starting gvim (assuming that you have it installed).
+
+Option 2: Remote Desktop
+Connect via SSH.
+Install a few packages.
+
+sudo apt update
+sudo apt install -y ubuntu-desktop xrdp
+Edit the RDP configuration file, /etc/xrdp/xrdp.ini, on the host. Note the entry for port, which will be important for making a connection. A minimal configuration might look like this:
+
+[globals]
+bitmap_cache=yes
+bitmap_compression=yes
+port=3389
+crypt_level=low
+channel_code=1
+max_bpp=24
+
+[xrdp1]
+name=sesman-Xvnc
+lib=libvnc.so
+username=ask
+password=ask
+ip=127.0.0.1
+port=ask-1
+In the AWS Dashboard edit the Security Group for the EC2 instance and allow inbound TCP connections on port 3389.
+
+Restart RDP.
+
+sudo service xrdp restart
+Choose the Window Manager for RDP connections. This involves changing the contents of a user’s .xsession file. You can copy the modified .xsession into /etc/skel/ so that it will be propagated into any newly created accounts. However, you’ll need to copy it manually into existing accounts.
+
+Select one of the Window Manager options below (there are certainly other options too!).
+
+XFCE
+sudo apt install -y xfce4 xfce4-goodies
+echo xfce4-session >~/.xsession
+Unity
+echo unity >~/.xsession
+You’re ready to connect!
+
+On a Linux machine, connect using vinagre. You’ll need to specify the IP address for the EC2 host and the RDP port.
